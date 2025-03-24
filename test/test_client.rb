@@ -8,7 +8,7 @@ require "json"
 module IUCNRedListRb
   class ClientTest < Minitest::Test
     def setup
-      @client = Client.new
+      @client = Client.new(api_key: "a_red_list_api_authorisation_key")
     end
 
     def test_initialize
