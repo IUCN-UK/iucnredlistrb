@@ -3,7 +3,7 @@
 require "minitest/autorun"
 require "net/http"
 require "json"
-require "webmock/minitest"
+# require "webmock/minitest"
 
 module IUCNRedListRb
   class ClientTest < Minitest::Test
