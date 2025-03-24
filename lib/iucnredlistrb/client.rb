@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IUCNRedListRb
   class Client
     API_BASE = "https://api.iucnredlist.org/"
