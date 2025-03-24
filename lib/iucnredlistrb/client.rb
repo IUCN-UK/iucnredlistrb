@@ -16,26 +16,26 @@ module IUCNRedListRb
   class Client
     API_BASE = "https://api.iucnredlist.org/api/v4/"
 
-    RESOURCE_NAMES = [
-      'biogeographical_realms',
-      'comprehensive_groups',
-      'conservation_actions',
-      'countries',
-      'faos',
-      'growth_forms',
-      'habitats',
-      'population_trends',
-      'red_list_categories',
-      'research',
-      'scopes',
-      'stresses',
-      'systems',
-      'threats',
-      'use_and_trade'
-    ]
+    RESOURCE_NAMES = %w[
+      biogeographical_realms
+      comprehensive_groups
+      conservation_actions
+      countries
+      faos
+      growth_forms
+      habitats
+      population_trends
+      red_list_categories
+      research
+      scopes
+      stresses
+      systems
+      threats
+      use_and_trade
+    ].freeze
 
     def initialize(api_key:)
-      @connection = initialize_connection_with(api_key:)
+      @connection = initialize_connection_with(api_key: api_key)
     end
 
     RESOURCE_NAMES.each do |resource_name|
@@ -51,8 +51,8 @@ module IUCNRedListRb
       response = @connection.get(endpoint, query)
 
       if response.success?
-        selected_headers = response.headers.select do |key, _| 
-          ["content-length", "total-pages", "current-page", "page-items"].include?(key)
+        selected_headers = response.headers.select do |key, _|
+          %w[content-length total-pages current-page page-items].include?(key)
         end
 
         response.body.merge(selected_headers)
@@ -65,8 +65,8 @@ module IUCNRedListRb
 
     def initialize_connection_with(api_key:)
       Faraday.new(url: API_BASE) do |connection|
-        connection.headers['accept'] = '*/*'
-        connection.headers['Authorization'] = api_key
+        connection.headers["accept"] = "*/*"
+        connection.headers["Authorization"] = api_key
         connection.response :json
       end
     end

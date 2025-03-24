@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module IUCNRedListRb
+  # IUCNRedListRb::Resource
+  #
   class Resource
     def initialize(client, endpoint)
       @client = client
