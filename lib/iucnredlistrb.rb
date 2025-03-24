@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "iucnredlistrb/version"
+require "net/http"
+require "faraday"
+require "json"
 
-module Iucnredlistrb
+require_relative "iucnredlistrb/version"
+require_relative "iucnredlistrb/client"
+
+module IUCNRedListRb
   class Error < StandardError; end
-  # Your code goes here...
 end
