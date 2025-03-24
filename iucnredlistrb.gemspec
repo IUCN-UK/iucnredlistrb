@@ -4,7 +4,7 @@ require_relative "lib/iucnredlistrb/version"
 
 Gem::Specification.new do |spec|
   spec.name = "iucnredlistrb"
-  spec.version = Iucnredlistrb::VERSION
+  spec.version = IUCNRedListRb::VERSION
   spec.authors = ["Simon Tarr", "Miguel Torres", "Ian Townsend"]
   spec.email = ["conservation.informatics@iucn.org"]
 
