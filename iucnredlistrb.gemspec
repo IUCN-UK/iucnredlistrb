@@ -5,7 +5,7 @@ require_relative "lib/iucnredlistrb/version"
 Gem::Specification.new do |spec|
   spec.name = "iucnredlistrb"
   spec.version = IUCNRedListRb::VERSION
-  spec.authors = ["Ian Townsend"]
+  spec.authors = ["Simon Tarr", "Ian Townsend"]
   spec.email = ["conservation.informatics@iucn.org"]
 
   spec.summary = "TODO: Write a short summary, because RubyGems requires one."
