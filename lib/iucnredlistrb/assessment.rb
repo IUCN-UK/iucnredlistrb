@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module IUCNRedListRb
-  # IUCNRedListRb::Resource
+  # IUCNRedListRb::Assessment
   #
   class Assessment
     def initialize(client)
