@@ -38,6 +38,10 @@ module IUCNRedListRb
       @connection = initialize_connection_with(api_key: api_key)
     end
 
+    def assessment
+      @assessment ||= IUCNRedListRb::Assessment.new(self)
+    end
+
     RESOURCE_NAMES.each do |resource_name|
       define_method(resource_name) do
         instance_variable_get("@#{resource_name}") ||
