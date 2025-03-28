@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    iucnredlistrb (0.1.0)
+    iucnredlistrb (0.1.2)
       faraday
 
 GEM
