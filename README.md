@@ -100,6 +100,16 @@ To start interacting with the IUCN Red List API, first, initialize a Client inst
 client = IUCNRedListRb::Client.new(api_key: 'YOUR_IUCN_RED_LIST_API_KEY')
 ```
 
+### Assessments
+
+To get data for a given assessment
+```
+# Returns assessment data for the Black Rhino
+# https://www.iucnredlist.org/species/6557/152728945
+assessment = client.assessment.find(152728945)
+assessment
+```
+
 ### Biogeographical Realms
 
 To get a list of all Biogeographical Realms
