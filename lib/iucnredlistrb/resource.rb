@@ -19,6 +19,8 @@ module IUCNRedListRb
       all_responses = find(id, query)
       total_pages = all_responses["total-pages"].to_i
 
+      return all_responses if total_pages == 1
+
       (2..total_pages).each do |page|
         show_progress_for(page, total_pages) if show_progress
 
@@ -26,7 +28,7 @@ module IUCNRedListRb
         paged_response = find(id, query.merge(page: page))
         all_responses["assessments"] += paged_response["assessments"]
       end
-      print "\r"
+
       all_responses
     end
 
