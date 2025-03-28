@@ -1,18 +1,6 @@
 # frozen_string_literal: true
 
 module IUCNRedListRb
-  # IUCNRedListRb::Client
-  #
-  # This class serves as the main entry point for interacting with the IUCN Red List API.  It delegates to
-  # the IUCNRedListRb classes to provide access to the various endpoints available in the Red List API.
-  #
-  # For detailed API documentation, visit:
-  # https://api.iucnredlist.org/api-docs/index.html
-  #
-  # Example usage:
-  #
-  #   client = IUCNRedListRb::Client.new
-  #
   class Client
     API_BASE = "https://api.iucnredlist.org/api/v4/"
 
@@ -36,6 +24,10 @@ module IUCNRedListRb
 
     def initialize(api_key:)
       @connection = initialize_connection_with(api_key: api_key)
+    end
+
+    def assessment
+      @assessment ||= IUCNRedListRb::Assessment.new(self)
     end
 
     RESOURCE_NAMES.each do |resource_name|
