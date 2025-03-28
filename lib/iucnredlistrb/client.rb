@@ -44,7 +44,7 @@ module IUCNRedListRb
 
       if response.success?
         selected_headers = response.headers.select do |key, _|
-          %w[content-length total-pages current-page page-items].include?(key)
+          %w[total-count total-pages current-page page-items].include?(key)
         end
 
         response.body.merge(selected_headers)
