@@ -220,10 +220,10 @@ response = client.faos.all(18)
 response
 ```
 
-To retrieve a list of all assessments for a given Country with some additional filtering
+To retrieve a list of all assessments for a given FAO with some additional filtering
 ```
 # e.g. all assessments belonging to Andorra ("AD")
-response = client.countries.all("AD", { latest: true, scope: 1 })
+response = client.faos.all(18, { latest: true, scope: 1 })
 response
 ```
 
