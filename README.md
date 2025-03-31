@@ -112,23 +112,58 @@ assessment
 
 ### Biogeographical Realms
 
-To get a list of all Biogeographical Realms
+To retrieve a list of all Biogeographical Realms
 ```
 response = client.biogeographical_realms.list
 response
 ```
 
+To retrieve a list of all assessments for a given Biogeographical Realm
+```
+# e.g. all assessments with an Afrotropical (code "0") biogeographical realm
+response = client.biogeographical_realms.all(0)
+response
+```
+
+To retrieve a list of all assessments for a given Biogeographical Realm with some additional filtering
+```
+# e.g. all latest and Global assessments with an Afrotropical (code "0") biogeographical realm
+response = client.biogeographical_realms.all(0, { latest: true, scope: 1 })
+response
+```
+
+You can also include a progress bar and wait time (this also aplies to the "all" method on every endpoint below)
+```
+response = client.biogeographical_realms.all(0, { latest: true, scope: 1 }, show_progress: true, wait_time: 0.8 )
+response
+```
+
 ### Comprehensive Groups
 
-To get a list of all Comprehensive Groups
+To retrieve a list of all Comprehensive Groups
 ```
 response = client.comprehensive_groups.list
 response
 ```
 
+To retrieve a list of all assessments for a given Comprehensive Group
+```
+# e.g. all assessments belonging to an Amphibian (code "amphibians") Comprehensive Group
+response = client.comprehensive_groups.all("amphibians")
+response
+```
+
+To retrieve a list of all assessments for a given Comprehensive Group with some additional filtering
+```
+# e.g. all assessments belonging to an Amphibian (code "amphibians") Comprehensive Group
+response = client.comprehensive_groups.all("amphibians", { latest: true, scope: 1 })
+response
+```
+
+
 ### Conservation Actions
 
-To get a list of all Conservation Actions
+To retrieve a list of all Conservation Actions
 ```
 response = client.conservation_actions.list
 response
@@ -136,7 +171,7 @@ response
 
 ### Countries
 
-To get a list of all Countries
+To retrieve a list of all Countries
 ```
 response = client.countries.list
 response
@@ -144,7 +179,7 @@ response
 
 ### FAOs
 
-To get a list of all FAOs
+To retrieve a list of all FAOs
 ```
 response = client.faos.list
 response
@@ -152,7 +187,7 @@ response
 
 ### Growth Forms
 
-To get a list of all Growth Forms
+To retrieve a list of all Growth Forms
 ```
 response = client.growth_forms.list
 response
@@ -160,7 +195,7 @@ response
 
 ### Habitats
 
-To get a list of all Habitats
+To retrieve a list of all Habitats
 ```
 response = client.habitats.list
 response
@@ -168,7 +203,7 @@ response
 
 ### Population Trends
 
-To get a list of all Population Trends
+To retrieve a list of all Population Trends
 ```
 response = client.population_trends.list
 response
@@ -176,7 +211,7 @@ response
 
 ### Red List Categories
 
-To get a list of all Red List Categories
+To retrieve a list of all Red List Categories
 ```
 response = client.red_list_categories.list
 response
@@ -184,7 +219,7 @@ response
 
 ### Research
 
-To get a list of all Research
+To retrieve a list of all Research
 ```
 response = client.research.list
 response
@@ -192,7 +227,7 @@ response
 
 ### Scopes
 
-To get a list of all Scopes
+To retrieve a list of all Scopes
 ```
 response = client.scopes.list
 response
@@ -200,7 +235,7 @@ response
 
 ### Stresses
 
-To get a list of all Stresses
+To retrieve a list of all Stresses
 ```
 response = client.stresses.list
 response
@@ -208,7 +243,7 @@ response
 
 ### Systems
 
-To get a list of all Systems
+To retrieve a list of all Systems
 ```
 response = client.systems.list
 response
@@ -216,7 +251,7 @@ response
 
 ### Threats
 
-To get a list of all Threats
+To retrieve a list of all Threats
 ```
 response = client.threats.list
 response
@@ -224,7 +259,7 @@ response
 
 ### Use and Trade
 
-To get a list of all Use and Trade
+To retrieve a list of all Use and Trade
 ```
 response = client.use_and_trade.list
 response
