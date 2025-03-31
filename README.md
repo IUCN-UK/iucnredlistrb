@@ -215,14 +215,14 @@ response
 
 To retrieve a list of all assessments for a given FAO
 ```
-# e.g. all assessments belonging to the Arctic Sea (18)
+# e.g. all assessments belonging to the Arctic Sea (18) FAO
 response = client.faos.all(18)
 response
 ```
 
 To retrieve a list of all assessments for a given FAO with some additional filtering
 ```
-# e.g. all assessments belonging to Andorra ("AD")
+# e.g. all latest Global assessments belonging to the Arctic Sea (18) FAO
 response = client.faos.all(18, { latest: true, scope: 1 })
 response
 ```
