@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IUCNRedListRb
   class Taxa
     def initialize(client)
@@ -10,7 +12,7 @@ module IUCNRedListRb
       class
       order
       family
-    ]
+    ].freeze
 
     TAXA_LEVELS.each do |taxa_level|
       define_method(taxa_level) do
