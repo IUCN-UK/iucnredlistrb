@@ -322,6 +322,80 @@ response = client.use_and_trade.list
 response
 ```
 
+## Taxa
+
+### Kingdom
+
+To retrieve a list of all Kingdoms
+```
+response = client.taxa.kingdom.list
+response
+```
+
+To retrieve a list of assessments for a given Kingdom
+```
+response = client.taxa.kingdom.all('FUNGI')
+response
+```
+
+
+### Phylum
+
+To retrieve a list of all Phyla
+```
+response = client.taxa.phylum.list
+response
+```
+
+To retrieve a list of assessments for a given Phylum
+```
+response = client.taxa.phylum.all('ANNELIDA')
+response
+```
+
+### Class
+
+To retrieve a list of all Classes
+```
+response = client.taxa.class.list
+response
+```
+
+To retrieve a list of assessments for a given Class
+```
+response = client.taxa.class.all('ACTINOPTERYGII')
+response
+```
+
+## Order
+
+To retrieve a list of all Orders
+```
+response = client.taxa.order.list
+response
+```
+
+To retrieve a list of assessments for a given Order
+```
+response = client.taxa.order.all('ACORALES')
+response
+```
+
+## Family
+
+To retrieve a list of all Families
+```
+response = client.taxa.family.list
+response
+```
+
+To retrieve a list of assessments for a given Family
+```
+response = client.taxa.family.all('ACANTHACEAE')
+response
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
