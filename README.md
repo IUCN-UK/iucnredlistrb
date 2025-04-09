@@ -235,6 +235,21 @@ response = client.growth_forms.list
 response
 ```
 
+To retrieve a list of all assessments for a given Growth Form
+```
+# e.g. all assessments belonging to the Annual (A) Growth Form
+response = client.growth_forms.all('A')
+response
+```
+
+To retrieve a list of all assessments for a given Growth Form with some additional filtering
+```
+# e.g. all latest Global assessments belonging to the Annual (A) Growth Form
+response = client.growth_forms.all('A', { latest: true, scope: 1 })
+response
+```
+
+
 ### Habitats
 
 To retrieve a list of all Habitats
