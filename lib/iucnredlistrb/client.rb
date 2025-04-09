@@ -30,6 +30,10 @@ module IUCNRedListRb
       @assessment ||= IUCNRedListRb::Assessment.new(self)
     end
 
+    def taxa
+      @taxa ||= IUCNRedListRb::Taxa.new(self)
+    end
+
     RESOURCE_NAMES.each do |resource_name|
       define_method(resource_name) do
         instance_variable_get("@#{resource_name}") ||
