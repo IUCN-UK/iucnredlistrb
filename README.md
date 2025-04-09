@@ -125,7 +125,7 @@ response = client.biogeographical_realms.all(0)
 response
 ```
 
-To retrieve a list of all assessments for a given Biogeographical Realm with some additional filtering
+To retrieve a list of all assessments for a given Biogeographical Realm with some additional filtering (this also aplies to the "all" method on every endpoint below)
 ```
 # e.g. all latest and Global assessments with an Afrotropical (code "0") biogeographical realm
 response = client.biogeographical_realms.all(0, { latest: true, scope: 1 })
@@ -169,11 +169,39 @@ response = client.conservation_actions.list
 response
 ```
 
+To retrieve a list of all assessments for a given Conservation Action
+```
+# e.g. all assessments belonging to an "Land/water protection" Conservation Action
+response = client.conservation_actions.all(1)
+response
+```
+
+To retrieve  a list of all assessments for a given Conservation Action with some additional filtering
+```
+# e.g. all assessments belonging to an "Land/water protection" Conservation Action
+response = client.conservation_actions.all(1, { latest: true, scope: 1 })
+response
+```
+
 ### Countries
 
 To retrieve a list of all Countries
 ```
 response = client.countries.list
+response
+```
+
+To retrieve a list of all assessments for a given Country
+```
+# e.g. all assessments belonging to Andorra ("AD")
+response = client.countries.all("AD")
+response
+```
+
+To retrieve a list of all assessments for a given Country with some additional filtering
+```
+# e.g. all assessments belonging to Andorra ("AD")
+response = client.countries.all("AD", { latest: true, scope: 1 })
 response
 ```
 
@@ -185,6 +213,20 @@ response = client.faos.list
 response
 ```
 
+To retrieve a list of all assessments for a given FAO
+```
+# e.g. all assessments belonging to the Arctic Sea (18) FAO
+response = client.faos.all(18)
+response
+```
+
+To retrieve a list of all assessments for a given FAO with some additional filtering
+```
+# e.g. all latest Global assessments belonging to the Arctic Sea (18) FAO
+response = client.faos.all(18, { latest: true, scope: 1 })
+response
+```
+
 ### Growth Forms
 
 To retrieve a list of all Growth Forms
@@ -192,6 +234,21 @@ To retrieve a list of all Growth Forms
 response = client.growth_forms.list
 response
 ```
+
+To retrieve a list of all assessments for a given Growth Form
+```
+# e.g. all assessments belonging to the Annual (A) Growth Form
+response = client.growth_forms.all('A')
+response
+```
+
+To retrieve a list of all assessments for a given Growth Form with some additional filtering
+```
+# e.g. all latest Global assessments belonging to the Annual (A) Growth Form
+response = client.growth_forms.all('A', { latest: true, scope: 1 })
+response
+```
+
 
 ### Habitats
 
